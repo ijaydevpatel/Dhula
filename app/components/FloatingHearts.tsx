@@ -14,7 +14,7 @@ export default function FloatingHearts() {
     const containerRef = useRef<HTMLDivElement>(null);
     const heartsRef = useRef<Heart[]>([]);
     const mouseRef = useRef({ x: 0, y: 0 });
-    const rafRef = useRef<number>();
+    const rafRef = useRef<number | null>(null);
 
     /* ---------- INIT HEARTS ---------- */
     useEffect(() => {
