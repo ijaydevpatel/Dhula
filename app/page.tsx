@@ -14,6 +14,18 @@ function PageContent() {
         setMounted(true);
 
         const checkDate = () => {
+            const mode = searchParams.get("mode");
+
+            if (mode === "valentine") {
+                setIsAnniversary(false);
+                return;
+            }
+
+            if (mode === "anniversary") {
+                setIsAnniversary(true);
+                return;
+            }
+
             const now = new Date();
             // Target: Feb 12, 2026 00:00:00
             const target = new Date("2026-02-12T00:00:00");
@@ -21,10 +33,7 @@ function PageContent() {
             // Check if current date is past target
             const isPastTarget = now >= target;
 
-            // Check for manual override via query param ?mode=anniversary
-            const manualOverride = searchParams.get("mode") === "anniversary";
-
-            setIsAnniversary(isPastTarget || manualOverride);
+            setIsAnniversary(isPastTarget);
         };
 
         checkDate();
