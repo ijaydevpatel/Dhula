@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 const photos = [
     { src: "/photos/1.JPG", caption: "It started quietly." },
@@ -72,11 +73,14 @@ function PhotoCard({ photo, index, total, scrollYProgress }: { photo: typeof pho
                         shadow-[0_28px_80px_rgba(0,0,0,0.22)]
                     "
                 >
-                    <div className="h-full w-full rounded-[24px] overflow-hidden">
-                        <img
+                    <div className="h-full w-full rounded-[24px] overflow-hidden relative">
+                        <Image
                             src={photo.src}
-                            alt=""
-                            className="h-full w-full object-cover"
+                            alt={photo.caption}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 50vh"
+                            priority={index <= 2} // Prioritize first few images
                         />
                     </div>
                 </div>
