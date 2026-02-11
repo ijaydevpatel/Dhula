@@ -1,0 +1,48 @@
+"use client";
+
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+import ValentineContent from "./components/ValentineContent";
+import AnniversaryContent from "./components/AnniversaryContent";
+
+function PageContent() {
+    const searchParams = useSearchParams();
+    const [isAnniversary, setIsAnniversary] = useState(false);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+
+        const checkDate = () => {
+            const now = new Date();
+            // Target: Feb 12, 2026 00:00:00
+            const target = new Date("2026-02-12T00:00:00");
+
+            // Check if current date is past target
+            const isPastTarget = now >= target;
+
+            // Check for manual override via query param ?mode=anniversary
+            const manualOverride = searchParams.get("mode") === "anniversary";
+
+            setIsAnniversary(isPastTarget || manualOverride);
+        };
+
+        checkDate();
+    }, [searchParams]);
+
+    if (!mounted) return null;
+
+    if (isAnniversary) {
+        return <AnniversaryContent />;
+    }
+
+    return <ValentineContent />;
+}
+
+export default function Page() {
+    return (
+        <Suspense fallback={null}>
+            <PageContent />
+        </Suspense>
+    );
+}

@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/* =========================
+   FONT: TRANSCITY
+   ========================= */
+@font-face {
+    font-family: "Transcity";
+    src: url("/fonts/Transcity.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Rockybilly";
+    src: url("/fonts/Rockybilly.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "GreatVibes";
+    src: url("/fonts/GreatVibes-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "EagleHorizon";
+    src: url("/fonts/EagleHorizonP.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "QurovaBold";
+    src: url("/fonts/QurovaBold.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PrimorStylish";
+    src: url("/fonts/PrimorStylish.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+/* =========================
+   THEME VARIABLES
+   ========================= */
+
+/* Light theme */
+:root {
+    --bg: #ffffff;
+    --text: #0f172a;
+}
+
+/* Dark theme */
+.dark {
+    --bg: radial-gradient(1200px 600px at 50% -20%,
+            #1f2937,
+            transparent),
+        linear-gradient(to bottom, #020617, #020617);
+    --text: #ffffff;
+}
+
+/* =========================
+   GLOBAL STYLES
+   ========================= */
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s ease, color 0.3s ease;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Fixed header — revealed via GSAP class toggle */
+.fixed-header.is-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: all !important;
+}
