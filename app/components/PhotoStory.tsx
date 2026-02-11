@@ -5,17 +5,17 @@ import { useRef, useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 const photos = [
-    { src: "/photos/1.jpg", caption: "It started quietly." },
-    { src: "/photos/2.jpg", caption: "Somewhere between laughs and late talks." },
-    { src: "/photos/3.jpg", caption: "Moments that didn’t need words." },
+    { src: "/photos/1.JPG", caption: "It started quietly." },
+    { src: "/photos/2.JPG", caption: "Somewhere between laughs and late talks." },
+    { src: "/photos/3.JPG", caption: "Moments that didn’t need words." },
     { src: "/photos/4.jpg", caption: "Just us, being us." },
-    { src: "/photos/5.jpg", caption: "Comfort felt natural." },
-    { src: "/photos/6.jpg", caption: "Every day felt lighter." },
-    { src: "/photos/7.jpg", caption: "Smiles became effortless." },
-    { src: "/photos/8.jpg", caption: "Time slowed down." },
-    { src: "/photos/9.jpg", caption: "Love looked like this." },
-    { src: "/photos/10.jpg", caption: "Us, always." },
-    { src: "/photos/11.jpg", caption: "And still choosing you." }
+    { src: "/photos/5.JPG", caption: "Comfort felt natural." },
+    { src: "/photos/6.JPG", caption: "Every day felt lighter." },
+    { src: "/photos/7.JPG", caption: "Smiles became effortless." },
+    { src: "/photos/8.JPG", caption: "Time slowed down." },
+    { src: "/photos/9.JPG", caption: "Love looked like this." },
+    { src: "/photos/10.JPG", caption: "Us, always." },
+    { src: "/photos/11.JPG", caption: "And still choosing you." }
 ];
 
 function PhotoCard({ photo, index, total, scrollYProgress }: { photo: typeof photos[0], index: number, total: number, scrollYProgress: MotionValue<number> }) {
