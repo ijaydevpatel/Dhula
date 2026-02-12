@@ -27,8 +27,8 @@ function PageContent() {
             }
 
             const now = new Date();
-            // Target: Feb 12, 2026 02:00:00 (2:00 AM)
-            const target = new Date("2026-02-12T02:00:00");
+            // Target: Feb 21, 2026 00:00:00 (Midnight IST)
+            const target = new Date("2026-02-21T00:00:00");
 
             // Check if current date is past target
             const isPastTarget = now >= target;

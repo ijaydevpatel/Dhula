@@ -309,8 +309,23 @@ export default function AnniversaryContent() {
                                 textShadow: isDark ? `0 0 25px ${accentColor}80` : "none"
                             }}
                         >
-                            Happy<br />Anniversary
+                            Happy<br />Forever day
                         </motion.h1>
+                        <motion.p
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.6 }}
+                            style={{
+                                fontFamily: "Transcity, system-ui",
+                                fontSize: "clamp(1.2rem, 2.5vw, 1.8rem)",
+                                color: fontColor,
+                                letterSpacing: "0.3em",
+                                textTransform: "uppercase",
+                                marginTop: "0.5rem",
+                            }}
+                        >
+                            us day
+                        </motion.p>
                     </div>
 
                     <motion.div
@@ -338,10 +353,10 @@ export default function AnniversaryContent() {
                         className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center select-none"
                         style={{ color: fontColor }}
                     >
-                        <div style={{ fontSize: "1.05rem", fontWeight: 500, letterSpacing: "0.24em" }}>
+                        <div className="translate-y-2" style={{ fontSize: "1.05rem", fontWeight: 500, letterSpacing: "0.24em" }}>
                             Scroll
                         </div>
-                        <div className="flex justify-center mt-1 space-x-1">
+                        <div className="flex justify-center mt-0 space-x-1">
                             {[0, 1, 2].map((i) => (
                                 <motion.span
                                     key={i}
